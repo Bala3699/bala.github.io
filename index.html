@@ -1,116 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cybersecurity Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b0f14;
-      color: #e6e6e6;
-    }
-    header {
-      padding: 40px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #000000, #0f3d2e);
-    }
-    header h1 {
-      color: #00ff9c;
-      margin-bottom: 10px;
-    }
-    header p {
-      max-width: 600px;
-      margin: auto;
-      color: #cfcfcf;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #00ff9c;
-      border-bottom: 2px solid #00ff9c;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li::before {
-      content: "▶ ";
-      color: #00ff9c;
-    }
-    .card {
-      background-color: #121821;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 15px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #000;
-      color: #888;
-    }
-    a {
-      color: #00ff9c;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Koll | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Dark Koll</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <h1>Cybersecurity Enthusiast</h1>
-  <p>Ethical Hacking | Web Security | Linux | CTFs</p>
-</header>
+    <section id="hero">
+        <div class="container">
+            <h2>Professional Cybersecurity Enthusiast</h2>
+            <p>Ethical Hacking | Penetration Testing | Network Security | Python Security Tools</p>
+            <a href="#projects" class="btn">See My Work</a>
+        </div>
+    </section>
 
-<section>
-  <h2>About Me</h2>
-  <div class="card">
-    <p>I am a cybersecurity enthusiast focused on ethical hacking and defensive security. I learn by practicing hands-on labs, CTF challenges, and real-world simulations to understand how attacks work and how to prevent them.</p>
-  </div>
-</section>
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi, I am Dark Koll, a passionate cybersecurity professional focused on network security, ethical hacking, and creating tools for digital protection. I enjoy analyzing threats, securing systems, and learning cutting-edge cyber techniques.</p>
+        </div>
+    </section>
 
-<section>
-  <h2>Skills</h2>
-  <div class="card">
-    <ul>
-      <li>Linux & Kali Linux</li>
-      <li>Web Security Basics</li>
-      <li>Ethical Hacking Fundamentals</li>
-      <li>Network Basics</li>
-      <li>TryHackMe Labs</li>
-    </ul>
-  </div>
-</section>
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Ethical Hacking</li>
+                <li>Network Security</li>
+                <li>Python Scripting</li>
+                <li>Penetration Testing</li>
+                <li>Wireshark & Network Analysis</li>
+            </ul>
+        </div>
+    </section>
 
-<section>
-  <h2>Projects & Labs</h2>
-  <div class="card">
-    <ul>
-      <li>TryHackMe – Web Fundamentals</li>
-      <li>Linux Shell Scripting Basics</li>
-      <li>Beginner CTF Challenges</li>
-    </ul>
-  </div>
-</section>
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>CyberSentinel Tool</h3>
+                <p>A GUI-based Python tool for real-time system monitoring, file encryption, steganography, and network security.</p>
+                <a href="#" class="btn">View Code</a>
+            </div>
+            <div class="project-card">
+                <h3>Network Traffic Analysis</h3>
+                <p>Analyzed network packets using Wireshark to detect anomalies and suspicious activities in real time.</p>
+                <a href="#" class="btn">View Code</a>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>Contact</h2>
-  <div class="card">
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-    <p>Email: yourname@email.com</p>
-  </div>
-</section>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:darkkoll@example.com">darkkoll@example.com</a></p>
+            <p>LinkedIn: <a href="#">linkedin.com/in/darkkoll</a></p>
+            <p>GitHub: <a href="#">github.com/darkkoll</a></p>
+        </div>
+    </section>
 
-<footer>
-  <p>© 2025 | Cybersecurity Portfolio</p>
-</footer>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dark Koll | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>

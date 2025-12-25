@@ -1,59 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Balamurugan | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balamurugan | Cybersecurity Analyst Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid #1e3a8a;
+  border-radius: 4px;
+  color: #1e3a8a;
+  font-weight: 500;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+.btn:hover { background:#00ff99;color:#000 }
+
+/* ================= GLOBAL ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Roboto',sans-serif;
+  background:radial-gradient(circle at top,#020617,#000);
+  color:#e5e7eb;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1150px;margin:auto}
+
+/* ================= MATRIX ================= */
+#matrix{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  opacity:0.12;
+  pointer-events:none;
+}
+
+/* Keep content above matrix */
+header,section,footer{position:relative;z-index:2}
+
+/* ================= HEADER ================= */
+header{
+  background:rgba(2,6,23,.95);
+  border-bottom:1px solid #00ff99;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+header h1{color:#00ff99;font-size:24px;letter-spacing:1px}
+nav ul{list-style:none;display:flex;gap:22px}
+nav a{font-weight:500}
+nav a:hover{color:#00ff99}
+
+/* ================= HERO ================= */
+.hero{padding:90px 0;text-align:center}
+.hero h2{font-size:38px;color:#00ff99}
+.hero p{max-width:800px;margin:15px auto 30px;color:#cbd5e1}
+.hero-buttons a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 22px;
+  border-radius:8px;
+  border:1px solid #00ff99;
+  color:#00ff99;
+  font-weight:600;
+  transition:.3s;
+}
+.hero-buttons a:hover{background:#00ff99;color:#000}
+
+/* ================= SECTION ================= */
+section{padding:70px 0}
+section h2{
+  color:#00ff99;
+  margin-bottom:30px;
+  border-left:5px solid #00ff99;
+  padding-left:14px;
+}
+
+/* ================= STATS ================= */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.stat-card{
+  background:#020617;
+  border:1px solid #1f2933;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  transition:.3s;
+}
+.stat-card:hover{border-color:#00ff99;box-shadow:0 0 20px rgba(0,255,153,0.15)}
+.stat-card h3{font-size:34px;color:#00ff99}
+.stat-card p{margin-top:6px;color:#cbd5e1}
+
+/* ================= SKILLS ================= */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+.skill-card{
+  background:#020617;
+  padding:18px;
+  border-radius:10px;
+  border:1px solid #1f2933;
+  text-align:center;
+  transition:.3s;
+}
+.skill-card:hover{border-color:#00ff99;transform:translateY(-4px)}
+
+/* ================= CERTIFICATIONS ================= */
+.cert-grid{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+.cert-card{
+  display:flex;
+  gap:22px;
+  background:#020617;
+  border-left:5px solid #00ff99;
+  padding:24px;
+  border-radius:12px;
+  transition:.3s;
+}
+.cert-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(0,255,153,0.2)}
+.cert-icon{font-size:36px}
+.cert-content h3{color:#00ff99;margin-bottom:6px}
+.cert-content p{color:#cbd5e1}
+.cert-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 18px;
+  border-radius:6px;
+  border:1px solid #00ff99;
+  color:#00ff99;
+  font-size:14px;
+}
+.cert-btn:hover{background:#00ff99;color:#000}
+
+/* ================= PROJECTS ================= */
+.project-card{
+  background:#020617;
+  border:1px solid #1f2933;
+  padding:22px;
+  border-radius:12px;
+  margin-bottom:25px;
+}
+.project-card h3{color:#00ff99;margin-bottom:10px}
+.project-card ul{margin-left:18px}
+.project-card li{margin-bottom:6px}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#020617;
+  border-top:1px solid #1f2933;
+  text-align:center;
+  padding:20px 0;
+  color:#94a3b8;
+}
+
+/* ================= ANIMATION ================= */
+.fade{opacity:0;transform:translateY(30px);transition:.8s}
+.fade.show{opacity:1;transform:translateY(0)}
+</style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Balamurugan</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am a B.Tech Computer Science student specializing in <strong>cybersecurity, ethical hacking, and network security</strong>. I have hands-on experience with SIEM tools, log analysis, malware analysis, and network traffic monitoring. I aim to build secure systems and strengthen defenses against attacks.</p>
-    </div>
-  </section>
+<!-- MATRIX CANVAS -->
+<canvas id="matrix"></canvas>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">Ethical Hacking</div>
-        <div class="skill-card">Network Security</div>
-        <div class="skill-card">Python Scripting</div>
-        <div class="skill-card">Malware Analysis</div>
-        <div class="skill-card">SIEM Monitoring (Splunk)</div>
-        <div class="skill-card">Wireshark & TCPDump</div>
-        <div class="skill-card">Firewalls & IDS/IPS</div>
-        <div class="skill-card">Cryptography & Steganography</div>
+<header>
+  <div class="container">
+    <h1>Balamurugan</h1>
+    <nav>
+      <ul>
+        <li><a href="#stats">Overview</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero fade">
+  <div class="container">
+    <h2>Cybersecurity Engineer & SOC Analyst </h2>
+    <p>Final-year <b>B.Tech Computer Science and Engineering (Cyber Security)</b> student with hands
+on academic and lab-based experience in <strong>SOC fundamentals, SIEM log analysis, malware 
+analysis, and network security</strong>. Actively seeking a <strong>Cybersecurity Intern / SOC L1 Trainee / 
+Entry-Level Security Analyst </strong> role to apply practical skills in monitoring, analysis, and incident 
+detection.</p>
+    <div class="hero-buttons">
+      <a href="https://github.com/Bala3699/Balamurugan-/blob/main/univ%20cover.pdf" target="_blank">Cv Letter</a>
+      <a href="https://github.com/Bala3699/Balamurugan-/blob/main/univ%20resume%202.pdf" target="_blank">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<section id="stats" class="fade">
+  <div class="container">
+    <h2>Security Overview</h2>
+    <div class="stats-grid">
+      <div class="stat-card"><h3>19+</h3><p>Hands-on Labs</p></div>
+      <div class="stat-card"><h3>10+</h3><p>Security Tools Used</p></div>
+      <div class="stat-card"><h3>5+</h3><p>Security Projects</p></div>
+      <div class="stat-card"><h3>SOC L1</h3><p>Career Target</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="fade">
+  <div class="container">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+       <a href="https://github.com/Bala3699/python" target="_blank"><div class="skill-card">Python Programming</div></a>
+        <a href="https://github.com/Bala3699/networking" target="_blank"><div class="skill-card">Networking Fundamentals</div></a>
+        <a href="https://github.com/Bala3699/tryhackme-ctf-notes" target="_blank"><div class="skill-card">Security Tools</div></a>
+        <a href="https://github.com/Bala3699/documentry" target="_blank"><div class="skill-card">Malware Analysis</div></a>
+        <div class="skill-card">SOC & Incident Detection</div>
+        <a href="https://github.com/Bala3699/kali-linux" target="_blank"><div class="skill-card">Operating Systems</div></a>
+        <div class="skill-card"target="_blank">Web Technologies</div>
+        <div class="skill-card"target="_blank">Databases</div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications" class="fade">
+  <div class="container">
+    <h2>Certifications & Training</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon">🛡️</div>
+        <div class="cert-content">
+          <h3>TryHackMe – Cybersecurity Path (Ongoing)</h3>
+          <p>SOC labs, malware analysis, threat detection, and defensive security.</p>
+          <a class="cert-btn" href="https://tryhackme.com/p/Bala3699" target="_blank">View Profile</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🌐</div>
+        <div class="cert-content">
+          <h3>CCNA – Cisco Certified Network Associate</h3>
+          <p>Routing, switching, IP addressing, and troubleshooting fundamentals.</p>
+          <a class="cert-btn" href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">💻</div>
+        <div class="cert-content">
+          <h3>Web Design Internship – iLife Technologies</h3>
+          <p>HTML, CSS, and frontend development internship.</p>
+          <a class="cert-btn" href="#" target="_blank">View Certificate</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📑</div>
+        <div class="cert-content">
+          <h3>Certificates</h3>
+          <p>Linkdin Learning, otheres</p>
+          <a class="cert-btn" href="#" target="_blank">View Certificate</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2>Projects & Experience</h2>
-      <div class="project-card">
-        <h3>CyberSentinel Tool</h3>
+<section id="projects" class="fade">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>CyberSentinel Tool</h3>
         <p>Python-based device security and monitoring tool.</p>
         <ul>
           <li>File & process monitoring</li>
@@ -62,39 +294,107 @@
           <li>Password authentication with OTP & QR verification</li>
           <li>Suspicious activity detection</li>
         </ul>
-        <a href="https://github.com/Bala3699/CyberSentinel" target="_blank" class="btn">View Code</a>
-      </div>
-      <div class="project-card">
-        <h3>Network Traffic Capture & Analysis</h3>
-        <p>Real-time analysis of network packets using Wireshark on Kali Linux.</p>
+    </div>
+    <div class="project-card">
+      <h3>SECURE ENHANCE FILE STORAGE SYSTEM</h3>
+        <h4>Jan 2024 - May 2025</h4>
         <ul>
-          <li>Identified suspicious patterns and anomalies</li>
-          <li>Academic project for network forensics</li>
+          <li>Problem Addressed: Combatting theft and scams related to sensitive information usage.</li>
+          <li>Key Security Features Implemented: Biometric authentication, dynamic security 
+codes, embedded chip technology for encryption, text steganography for digital 
+certificates, SHA-256 for OTP verification, and real-time fraud detection.  </li>
+          <p><strong>Impact:</strong> Mitigating data theft and fraud, instilling user confidence</p>
         </ul>
-      </div>
-      <div class="project-card">
-        <h3>Security Scripts Collection</h3>
-        <p>Python scripts for encryption, monitoring, and steganography.</p>
-        <a href="https://github.com/Bala3699" target="_blank" class="btn">View Repo</a>
-      </div>
     </div>
-  </section>
+    <div class="project-card">
+      <h3>Vulnerability Analysis of Android Applications </h3>
+        <p><strong>Took:</strong>Mobsf</p>
+        <ul>
+          <li>Performed static analysis of Android APKs to identify security vulnerabilities.</li>
+          <li>Detected insecure data storage, hardcoded credentials, and permission misuse.</li>
+          <li>Generated automated reports and documented remediation recommendations.</li>
+        </ul>
+        <a href="https://github.com/Bala3699/documentry/blob/main/Mobsf.pdf" target="_blank" class="btn">View Repo</a>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:bala369936@gmail.com">bala369936@gmail.com</a></p>
-      <p>Phone: 9626457885</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/balamurugan37" target="_blank">linkedin.com/in/balamurugan37</a></p>
-      <p>GitHub: <a href="https://github.com/Bala3699" target="_blank">github.com/Bala3699</a></p>
     </div>
-  </section>
+    <div class="project-card">
+      <h3>Splunk Log Analysis & Monitoring (SOC-Oriented Labs) </h3>
+        <p><strong>Took:</strong>Splunk</p>
+        <ul>
+          <li>Collected and analyzed system and network logs using <strong> Splunk</strong></li>
+          <li>Created dashboards to monitor security events and system behavior.</li>
+          <li>Configured alerts for suspicious activities and basic threat indicators.</li>
+          <li>Performed introductory log correlation to identify anomalies.</li>
+        </ul>
+        <a href=https://github.com/Bala3699/tryhackme-ctf-notes/blob/main/splunk.md target="_blank" class="btn">View Repo</a>
+    </div>
+     <div class="project-card">
+  <h3>Malware Analysis – TryHackMe Labs </h3>
+        <p><strong>Took:</strong>PeStudio, ProcMon, Regshot</p>
+        <ul>
+          <li>Conducted static and dynamic analysis of Windows malware samples in sandboxed 
+environments.</li>
+          <li>Extracted hashes, metadata, strings, and imports using<strong>PeStudio</strong></li>
+          <li>Identified registry changes using <stronge>Regshot.
+          <li>Monitored process and file activity using<strong>Process Monitor (ProcMon).</strong></li>
+        </ul>
+        <a href=https://github.com/Bala3699/tryhackme-ctf-notes/blob/main/malware.md target="_blank" class="btn">View Repo</a>
+    </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Balamurugan | All Rights Reserved</p>
+  </div>
+</section>
+
+<section id="contact" class="fade">
+  <div class="container">
+    <h2>Contact</h2>
+      <p style="color: green;">Email: <a href="mailto:bala369936@gmail.com" style="color:blue;" target="_blank">bala369936@gmail.com</a></p>
+      <p style="color: green;">Phone: 9626457885</p>
+      <p style="color: green;">LinkedIn: <a href="https://www.linkedin.com/in/balamurugan37" style="color:blue;" target="_blank">linkedin.com/in/balamurugan37</a></p>
+      <p style="color: green;">GitHub: <a href="https://github.com/Bala3699" style="color:blue;" target="_blank">github.com/Bala3699</a></p>
     </div>
-  </footer>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Balamurugan | Cybersecurity Portfolio</p>
+</footer>
+
+<!-- MATRIX SCRIPT -->
+<script>
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resize();
+window.addEventListener("resize",resize);
+
+const chars="01";
+const fontSize=16;
+let columns=Math.floor(canvas.width/fontSize);
+let drops=Array(columns).fill(1);
+
+function drawMatrix(){
+  ctx.fillStyle="rgba(0,0,0,0.08)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#00ff99";
+  ctx.font=fontSize+"px monospace";
+  for(let i=0;i<drops.length;i++){
+    const char=chars[Math.floor(Math.random()*chars.length)];
+    ctx.fillText(char,i*fontSize,drops[i]*fontSize);
+    if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(drawMatrix,33);
+</script>
+
+<script>
+const faders=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  faders.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-100) el.classList.add('show');
+  });
+});
+</script>
+
 </body>
 </html>
